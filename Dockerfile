@@ -10,8 +10,10 @@ RUN set -eux; \
       openssl-dev \
       musl-dev \
       cargo; \
+    apk --update add gcc python3-dev libc-dev make libffi-dev; \
     pip3 install --upgrade pip cffi; \
     pip3 install ansible boto pywinrm; \
+    pip3 install paramiko; \
     apk del build-dependencies; \
     rm -rf /var/cache/apk/*; \
 # Remove PIP and Cargo cache
